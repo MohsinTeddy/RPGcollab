@@ -11,14 +11,16 @@ pygame.display.set_caption("RPG Collab")
 clock = pygame.time.Clock()
 fileRoot = ""
 
+gameLoop.initLoop(screen, fileRoot)
+
 def Loop():
-    gameLoop.tickLoop()
-    screen.fill((2, 2, 20))
+    screen.fill((0, 0, 0))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.mixer.music.stop()
             pygame.quit()
             exit()
+    gameLoop.tickLoop()
     pygame.display.update()
     clock.tick(max_fps)
 
