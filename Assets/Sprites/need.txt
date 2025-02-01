@@ -1,0 +1,3 @@
+Sprites: 24x24/
+    Tile, 
+    Wall,
