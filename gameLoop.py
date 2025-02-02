@@ -8,12 +8,21 @@ def initLoop(screenSurf: pygame.Surface, filePathRoot: str):
     global camPos
     global screen
     global tileGrid
-    tileGrid = [[100,100],[],[],[]]
+    tileGrid = [[30,30],[],[],[]]
     for layer in range(len(tileGrid)-1):
-        for i in range(tileGrid[0][0]*tileGrid[0][1]):
-            if layer == 0:
-                tileGrid[layer+1].append(randint(1,2))
-            else: tileGrid[layer+1].append(0)
+        for i in range(tileGrid[0][0]):
+            for i in range(tileGrid[0][1]):
+                if layer != 0:
+                    tileGrid[layer+1].append(0)
+    for i in range(tileGrid[0][0]):
+        tileGrid[1].append(2)
+    for i in range(tileGrid[0][1]-2):
+        tileGrid[1].append(2)
+        for i in range(tileGrid[0][0]-2):
+            tileGrid[1].append(1)
+        tileGrid[1].append(2)
+    for i in range(tileGrid[0][0]):
+        tileGrid[1].append(2)
     screen = screenSurf
     camPos = [0,0]
     loadedTiles = []
@@ -28,21 +37,29 @@ def renderTileType(Pos: tuple, Type: int):
 
 def renderTiles(layer: int):
     tileSize = 24
-    tileID = 0
     gridData = tileGrid[layer+1]
     origTilePos = [-(camPos[0]%tileSize),-(camPos[1]%tileSize)]
     tilePos = [origTilePos[0],origTilePos[1]]
-    for row in range(math.floor(screen.get_width()/tileSize) + 1):
-        for col in range(math.floor(screen.get_height()/tileSize) + 1):
+    renderWidth = math.floor(screen.get_width()/tileSize) + 1
+    renderHeight = math.floor(screen.get_height()/tileSize) + 1
+    gridWidth = tileGrid[0][0]
+    gridHeight = tileGrid[0][1]
+    tileOffX = math.floor(camPos[0]/tileSize)
+    tileOffY = math.floor(camPos[1]/tileSize)
+    tileID = tileOffX
+    tileID += tileOffY*gridWidth
+    for col in range(renderHeight):
+        for row in range(renderWidth):
             tileType = 0
             if tileID >= 0:
                 if tileID <= len(gridData)-1:
                     tileType = gridData[tileID]
             renderTileType(tilePos, tileType)
-            tilePos[1] += tileSize
+            tilePos[0] += tileSize
             tileID += 1
-        tilePos[1] = origTilePos[1]
-        tilePos[0] += tileSize
+        tileID += gridWidth-renderWidth
+        tilePos[0] = origTilePos[0]
+        tilePos[1] += tileSize
 
 def movePlayer():
     keys = pygame.key.get_pressed()
