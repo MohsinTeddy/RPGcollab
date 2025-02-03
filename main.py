@@ -9,7 +9,11 @@ pygame.init()
 max_fps = 60
 pygame.display.set_caption("RPG Collab")
 clock = pygame.time.Clock()
-fileRoot = ""
+fileRoot = "" # Mujtaba File Root
+fileRoot = "C:/Mohsin/Coding/Python/RPG/" # Mohsin File Root
+fileRoot = "" # No Root will search in current directory
+# Since we need to have a path from the Root when using PyInstaller
+# We can set it from here since we have different roots
 
 gameLoop.initLoop(screen, fileRoot)
 

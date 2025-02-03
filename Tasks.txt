@@ -1,9 +1,12 @@
 # Mohsin
 
-1 Tile grid with save
-2 Layers
-3 Room system
-4 Movement
+1 NPCs/Players
+2 Movement
+3 NPC Layering
+4 Tile grid with a Saving System
+5 Collisions
+6 Tile Grid Data
+7 Room System
 
 # Mujtaba
 
