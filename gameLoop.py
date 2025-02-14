@@ -64,7 +64,10 @@ def initLoop(screenSurf: pygame.Surface, filePathRoot: str):
             tileGrid[depth+1].append([]) # Creates a New Layer for each Depth
             for i in range(tileGrid[0][0]):
                 for i in range(tileGrid[0][1]):
-                    tileGrid[depth+1][layer+1].append([6,'']) # Fills each Layer of each Depth with Tile 0 (Air)
+                    if layer == 0:
+                        tileGrid[depth+1][layer+1].append([6,'']) # Fills each Layer of each Depth with Tile 6 (Table)
+                    else:
+                        tileGrid[depth+1][layer+1].append([0,'']) # Fills each Layer of each Depth with Tile 0 (Air)
 
     # Makes Depth 0, Layer 0 into a box like shape
     tileGrid[1][1] = []
@@ -83,8 +86,9 @@ def initLoop(screenSurf: pygame.Surface, filePathRoot: str):
 
 class OptionSurfs():
     def __init__(self, origSurf: pygame.Surface):
-        self.main = origSurf.convert_alpha()
+        self.main = origSurf
         self.shadow = pygame.Surface.copy(self.main)
+        self.shadow = self.main.convert_alpha()
         self.shadow = pygame.transform.flip(self.shadow, False, True)
         self.shadow.fill((0, 0, 0, 0), special_flags=pygame.BLEND_MULT)
         self.shadow.set_alpha(round(255/5))
@@ -143,8 +147,8 @@ def renderAllObjectatRow(row, depth):
             if row == math.floor((objData[2][1])/tileSize):
                 print(f'{row}, {math.floor((objData[2][1])/tileSize)}')
                 screen.blit(objData[0], objData[1])
-                pygame.display.update()
-                breakpoint()
+                #pygame.display.update()
+                #breakpoint()
                 
 
 def renderTiles(depth: int):
@@ -296,8 +300,8 @@ def tickLoop(clock: pygame.time.Clock):
     renderPlayer()
     for i in range(len(tileGrid)-1):
         renderTiles(i)
-        pygame.display.update()
-        breakpoint()
+        #pygame.display.update()
+        #breakpoint()
     tileIdx = getTileIndex([pygame.mouse.get_pos()[0],pygame.mouse.get_pos()[1]])
     roundedCursor = [((math.floor((pygame.mouse.get_pos()[0]-gridPos[0] + (camPos[0]%scaleTileSize))/scaleTileSize))*scaleTileSize) + gridPos[0] - (camPos[0]%scaleTileSize) - (1*gridZoom)]
     roundedCursor.append(((math.floor((pygame.mouse.get_pos()[1]-gridPos[1]  + (camPos[1]%scaleTileSize))/scaleTileSize))*scaleTileSize) + gridPos[1] - (camPos[1]%scaleTileSize) - (1*gridZoom))
