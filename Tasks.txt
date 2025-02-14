@@ -3,9 +3,9 @@
 1 NPCs/Players
 2 Movement
 3 NPC Layering
-4 Tile grid with a Saving System
-5 Collisions
-6 Tile Grid Data
+4 Tile Grid Data
+5 Tile grid with a Saving System
+6 Collisions
 7 Room System
 
 # Mujtaba

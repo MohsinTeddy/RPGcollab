@@ -4,7 +4,7 @@ from sys import exit
 
 screenWidth = 480
 screenHeight = 360
-screen = pygame.display.set_mode((screenWidth,screenHeight))
+screen = pygame.display.set_mode((screenWidth,screenHeight), flags = pygame.RESIZABLE)
 pygame.init()
 max_fps = 60
 pygame.display.set_caption("RPG Collab")
@@ -24,7 +24,9 @@ def Loop():
             pygame.mixer.music.stop()
             pygame.quit()
             exit()
-    gameLoop.tickLoop()
+        elif event.type == pygame.VIDEORESIZE:
+            gameLoop.regenViewPort()
+    gameLoop.tickLoop(clock)
     pygame.display.update()
     clock.tick(max_fps)
 

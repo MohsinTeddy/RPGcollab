@@ -1,0 +1,60 @@
+Names:
+Optional: Hero
+Centeral Object: Stone of Harmony
+Villan: dunno
+Kingdom: Pentora (A mix of "penta" (five) and "ora," meaning peace or light, suggesting the five peaceful tribes)
+Starting Point: (Name) Village
+
+Dungeons:
+Forest Temple (First Shard, Hero's Bow)
+Water Temple (Third Shard)
+Fire Temple (Second Shard)
+Wind Temple (Forth Shard, Leap Feather)
+Castle Ruins (Final Shard)
+Temple of Harmony (Final Battle)
+
+Tribes:
+(Forest Tribe):
+Locations: The Evergrove Forest
+Can be accessed through a maze like forest trail in Pentora Highlands
+Stone Usage: Purify Swampy Water
+Marinaeia (Water Tribe):
+Locations: 
+Stone Usage: 
+(Fire Tribe):
+Locations: Magmara Base, Magmara Research Facility
+Stone Usage: Harvest Energy from magma
+Highly advanced tribe that makes massive electrical system
+(Wind Tribe):
+Locations: 
+Stone Usage: To create floating islands
+
+Items:
+Heartstone Shard (4 Shards create a Heartstone)
+Heartstone (Increases Maximun Hearts)
+Currency (Money)
+Swords (Sword)
+Sheild (Blocks and allows slow movement only forward and backward)
+Quiver
+Hero's Bow (Shoots in 8 directions)
+Sword Guard (Prevents you from attacking NPCs)
+Elemental Arrows (Fire, Ice)
+Bomb Bag
+Bombs (Explodes)
+Hydroshield Armor (Increased Fire Damage, Can enter blazing tmepretures)
+Blazemail Armor (Increased Defense, Lowered Fire Damage, Can enter blazing tmepretures)
+Leap Feather (Allows you to jump)
+Heartforge Armor (Increased Defense, +1 HP / 30 Seconds)
+
+Plot:
+The Stone of Harmony was created to bring the Kingdom of Name to Great Power
+The King routed this power to 5 major tribes within the kingdom but one tribe refused this power as to not have anyone abuse such power
+Villan destroyed Stone of Harmony into 5 pieces and claims its power as his own.
+He hides these shards in various Dungeons which will be conquered by the Hero.
+When completing a Dungeon, the Hero collects one of the shards.
+Each shard contributes to the villan's power and the Hero can decide:
+1. Destroy the shard and weaken the villan while removing the chance the kingdom being restored
+2. Keep the shards and have to fight a stronger villan, but also allowing for the kingodm to return glory
+
+Name Ideas:
+Aghrawah, Novsa, Iohn, Prsaata, and Omisia
